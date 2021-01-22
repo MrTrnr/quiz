@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quiz</title>
+</head>
+<body>
+<p><span id='s1'></span><span id='s2'></span></p>
+<button onclick="calcul()">question</button><button onclick="reponse()">réponse</button>
+</body>
+
+<script>
+	let a;
+	let b;
+	let result;
+	function calcul(){
+		a = 2 + Math.floor(18*Math.random());
+		b = 10 + Math.floor(10*Math.random());
+		result = a*b;
+		document.getElementById("s1").innerHTML = `${a} x ${b} = `;
+		document.getElementById("s2").innerHTML = ``;
+
+	}
+	function reponse(){
+		document.getElementById("s2").innerHTML = `${result}`;
+	}
+
+	
+
+</script>
+
+</script>
+</html>
