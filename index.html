@@ -5,7 +5,7 @@
 	<title>quiz</title>
 </head>
 <body>
-<p><span id='s1'></span><span id='s2'></span></p>
+<p><span id='question'></span><span id='reponse'></span></p>
 <button onclick="calcul()">question</button><button onclick="reponse()">réponse</button>
 </body>
 
@@ -14,15 +14,21 @@
 	let b;
 	let result;
 	function calcul(){
+		// a est un nombre compris entre 2 et 20
 		a = 2 + Math.floor(18*Math.random());
+
+		//b est un nombre compris entre 10 et 19
 		b = 10 + Math.floor(10*Math.random());
 		result = a*b;
-		document.getElementById("s1").innerHTML = `${a} x ${b} = `;
-		document.getElementById("s2").innerHTML = ``;
+		document.getElementById("question").innerHTML = `${a} x ${b} = `;
+		document.getElementById("reponse").innerHTML = ``;
+
+		// délai de 2 secondes avant l'apparition de la réponse
+		setTimeout(function(){document.getElementById("reponse").innerHTML = `${result}`;}, 2000);
 
 	}
 	function reponse(){
-		document.getElementById("s2").innerHTML = `${result}`;
+		document.getElementById("reponse").innerHTML = `${result}`;
 	}
 
 </script>
